@@ -1,0 +1,17 @@
+!storage/app/public/.gitkeep
+!storage/debugbar/.gitkeep
+!storage/framework/cache/.gitkeep
+!storage/framework/sessions/.gitkeep
+!storage/framework/views/.gitkeep
+!storage/framework/.gitkeep
+!storage/log/.gitkeep
+/storage/*
+/laradock/.env
+/vendor/
+/bower_components/
+.idea/
+!public/api-rendered-markdowns/.gitkeep
+.env
+!public/api/.gitkeep
+public/api/*
+node_modules/*
