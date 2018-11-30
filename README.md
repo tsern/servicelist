@@ -23,4 +23,4 @@ Template for PHP API Applications
  **Helping links:**
   - [Laradock](http://laradock.io/)
   - [APIATO](http://docs.apiato.io/getting-started/installation/)
-  - [Symfony 3.4](https://symfony.com/doc/3.4/index.html#gsc.tab=0)
+  - [Laravel 5.7](https://laravel.com/docs/5.7)
