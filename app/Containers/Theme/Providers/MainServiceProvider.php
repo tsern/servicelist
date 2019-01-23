@@ -3,7 +3,8 @@
 namespace App\Containers\Theme\Providers;
 
 use App\Ship\Parents\Providers\MainProvider;
-
+use Illuminate\Support\Facades\View;
+use App\Containers\Theme\Models\Theme;
 /**
  * Class MainServiceProvider.
  *
@@ -18,7 +19,7 @@ class MainServiceProvider extends MainProvider
      * @var array
      */
     public $serviceProviders = [
-        // InternalServiceProviderExample::class,
+
     ];
 
     /**
@@ -27,7 +28,7 @@ class MainServiceProvider extends MainProvider
      * @var  array
      */
     public $aliases = [
-        // 'Foo' => Bar::class,
+
     ];
 
     /**
@@ -37,7 +38,6 @@ class MainServiceProvider extends MainProvider
     {
         parent::register();
 
-        // $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
-        // ...
+        View::share('theme', new Theme());
     }
 }
