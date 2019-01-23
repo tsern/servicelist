@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: rostyslav
- * Date: 18.01.19
- * Time: 18:12
- */
 
 namespace App\Containers\Theme\Models;
 
