@@ -20,7 +20,7 @@ class IconLink extends Link
      * @param string $icon_class
      * @param array $sub
      */
-    public function __construct(string $name,string $link,string $icon_class)
+    public function __construct(string $name, string $link, string $icon_class)
     {
         parent::__construct($name, $link);
         $this->icon_class = $icon_class;

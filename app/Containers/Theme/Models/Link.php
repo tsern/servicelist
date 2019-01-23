@@ -23,7 +23,7 @@ class Link
      * @param string $name
      * @param string $link
      */
-    public function __construct(string $name,string $link)
+    public function __construct(string $name, string $link)
     {
         $this->name = $name;
         $this->link = $link;
