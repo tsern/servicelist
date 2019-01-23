@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-    <!-- Generated: 2018-04-16 09:29:05 +0200 -->
     <title>Servicelist - @yield('title')</title>
     @include('layouts.components.meta.basic_meta')
     @include('layouts.components.meta.basic_styles')
