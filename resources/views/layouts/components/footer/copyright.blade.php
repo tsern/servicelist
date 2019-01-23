@@ -5,8 +5,7 @@
                 <div class="row align-items-center">
                     <div class="col-auto">
                         <ul class="list-inline list-inline-dots mb-0">
-                            @inject('theme','\App\Containers\Theme\Models\Theme')
-                            @each('layouts.components.footer.copyright.link',$theme::getFooterLinks(),'button')
+                            @each('layouts.components.footer.copyright.link',$theme->getFooterLinks(),'button')
                         </ul>
                     </div>
                     <div class="col-auto">

@@ -6,8 +6,7 @@
             </div>
             <div class="col-lg order-lg-first">
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
-                    @inject('theme','\App\Containers\Theme\Models\Theme')
-                    @each('layouts.components.header.second.menu_item', $theme::getMainMenu(), 'button')
+                    @each('layouts.components.header.second.menu_item', $theme->getMainMenu(), 'button')
                 </ul>
             </div>
         </div>

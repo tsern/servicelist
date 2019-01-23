@@ -3,10 +3,10 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="row">
-                    @inject('theme','\App\Containers\Theme\Models\Theme')
-                    <?php $footer_menu = $theme::getFooterMenu() ?>
+                    @php
+                        $footer_menu = $theme->getFooterMenu();
+                    @endphp
                     @for($i = 0; $i < count($footer_menu); $i++)
-
                         @php
                             $button = $footer_menu[$i]
                         @endphp
@@ -19,10 +19,7 @@
                                 </ul>
                             </div>
                         @endif
-
                     @endfor
-
-                    {{--@each('layouts.components.footer.main_menu.button',$theme::getFooterMenu())--}}
                 </div>
             </div>
             <div class="col-lg-4 mt-4 mt-lg-0">

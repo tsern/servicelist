@@ -7,7 +7,6 @@
         </span>
     </a>
     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-        @inject('theme','\App\Containers\Theme\Models\Theme')
-        @each('layouts.components.header.first.right_content.user_menu.menu_item',$theme::getUserLinks(),'menu_item')
+        @each('layouts.components.header.first.right_content.user_menu.menu_item',$theme->getUserLinks(),'menu_item')
     </div>
 </div>
