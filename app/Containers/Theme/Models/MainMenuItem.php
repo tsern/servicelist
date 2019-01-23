@@ -12,18 +12,18 @@ class MainMenuItem extends IconLink
      *
      * @var array
      */
-    public $sub = [];
+    public $subMenu = [];
 
     /**
      * MainMenuItem constructor.
      * @param string $name
      * @param string $link
      * @param string $icon_class
-     * @param array $sub
+     * @param array $subMenu
      */
-    public function __construct(string $name, string $link, string $icon_class, array $sub = [])
+    public function __construct(string $name, string $link, string $icon_class, array $subMenu = [])
     {
         parent::__construct($name, $link, $icon_class);
-        $this->sub = $sub;
+        $this->subMenu = $subMenu;
     }
 }
