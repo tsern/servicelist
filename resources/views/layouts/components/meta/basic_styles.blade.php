@@ -11,5 +11,3 @@
 <link href="{{ asset('assets/css/tabler.css') }}" rel="stylesheet" />
 
 <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet" />
-
-{{--<link href="{{ asset('css/common.css') }}" rel="stylesheet" />--}}

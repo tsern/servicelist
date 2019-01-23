@@ -4,7 +4,7 @@
             <div class="col-lg-8">
                 <div class="row">
                     @php
-                        $footer_menu = $theme->getFooterMenu();
+                        $footer_menu = $theme->getFooterMenuLinks();
                     @endphp
                     @for($i = 0; $i < count($footer_menu); $i++)
                         @php
