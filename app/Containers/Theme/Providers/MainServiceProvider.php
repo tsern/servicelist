@@ -40,38 +40,8 @@ class MainServiceProvider extends MainProvider
     {
         parent::register();
 
-        /*$links = [
-            'footer_copyright_links' => [
-                new Link('Documentation', '#'),
-                new Link('FAQ', '#'),
-            ],
-            'footer_menu_links' => [
-                new Link('Link 1', '#'),
-                new Link('Link 2', '#'),
-                new Link('Link 3', '#'),
-                new Link('Link 4', '#'),
-                new Link('Link 5', '#'),
-                new Link('Link 6', '#'),
-                new Link('Link 7', '#'),
-                new Link('Link 8', '#'),
-            ],
-            'main_menu_links' => [
-                new MenuItem('Home', '#','fe-home', []),
-                new MenuItem('Interface', '#', 'fe-box' , []),
-                new MenuItem('Components', '#', 'fe-calendar', []),
-                new MenuItem('Pages', '#', 'fe-file', []),
-                new MenuItem('Forms', '#', 'fe-square', []),
-            ],
-            'user_menu_links' => [
-                new IconLink('Profile', '#', 'fe-user'),
-                new IconLink('Settings', '#', 'fe-settings'),
-                new IconLink('Message', '#', 'fe-send'),
-                new IconLink('Sign out', '#', 'fe-log-out'),
-            ],
-
-        ];*/
-
         $links = Apiato::call('Theme@GetLinksTask@run');
+
         View::share('theme', new Theme($links));
     }
 }

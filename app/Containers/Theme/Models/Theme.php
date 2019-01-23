@@ -33,16 +33,25 @@ class Theme
     {
         $prefix = 'get';
         $suffix = 'Links';
-        $key = $name;
 
-        if (substr($key, 0, strlen($prefix)) == $prefix) {
-            $key = substr($key, strlen($prefix));
+        if(strpos($name,$prefix) == 0 && strpos($name,$suffix) == strlen($name) - strlen($suffix))
+        {
+            $key = $name;
+
+            if (substr($key, 0, strlen($prefix)) == $prefix) {
+                $key = substr($key, strlen($prefix));
+            }
+
+            $key = substr($key, 0,strlen($key) - strlen($suffix));
+            $key = $result = preg_replace('/\B([A-Z])/', '_$1', $key);
+            $key = strtolower($key).'_'.strtolower($suffix);
+
+            if(array_key_exists($key,$this->links))
+            {
+                return $this->links[$key];
+            }
         }
 
-        $key = substr($key, 0,strlen($key) - strlen($suffix));
-        $key = $result = preg_replace('/\B([A-Z])/', '_$1', $key);
-        $key = strtolower($key).'_'.strtolower($suffix);
-        
-        return $this->links[$key];
+        return $this->$name($arguments);
     }
 }
