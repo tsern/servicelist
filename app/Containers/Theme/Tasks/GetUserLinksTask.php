@@ -17,15 +17,11 @@ class GetUserLinksTask extends Task
      */
     public function run()
     {
-
         return  [
-
-            new IconLink('Profile',  '#','fe-user'  ),
-            new IconLink('Settings', '#','fe-settings' ),
-            new IconLink('Message',  '#','fe-send'   ),
-            new IconLink('Sign out', '#','fe-log-out' ),
-
+            new IconLink('Profile','#','fe-user'),
+            new IconLink('Settings','#','fe-settings'),
+            new IconLink('Message','#','fe-send'),
+            new IconLink('Sign out','#','fe-log-out'),
         ];
     }
-
 }

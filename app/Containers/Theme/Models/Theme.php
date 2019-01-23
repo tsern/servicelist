@@ -9,21 +9,26 @@ use Apiato\Core\Foundation\Facades\Apiato;
  */
 class Theme
 {
-    /*public static function getInstance()
-    {
-        if (!(self::$instance instanceof self)) {
-            self::$instance = new self();
-        }
-        return self::$instance;
-    }*/
 
-    /*private function __construct()
-    {
-    }*/
+    /**
+     * @var array
+     */
+    private static $userLinks;
 
-    /*private function __clone()
-    {
-    }*/
+    /**
+     * @var array
+     */
+    private static $mainMenu;
+
+    /**
+     * @var array
+     */
+    private static $footerMenu;
+
+    /**
+     * @var array
+     */
+    private static $footerLinks;
 
     private function __sleep()
     {
@@ -32,26 +37,11 @@ class Theme
     private function __wakeup()
     {
     }
-    /**
-     * @var array
-     */
-    private static $userLinks;
-    /**
-     * @var array
-     */
-    private static $mainMenu;
-    /**
-     * @var array
-     */
-    private static $footerMenu;
-    /**
-     * @var array
-     */
-    private static $footerLinks;
+
     /**
      * @return array
      */
-    public static function getUserLinks()
+    public function getUserLinks()
     {
     if (!(self::$userLinks)) {
             self::$userLinks = Apiato::call('Theme@GetUserLinksTask');;
@@ -62,7 +52,7 @@ class Theme
     /**
      * @return array
      */
-    public static function getMainMenu()
+    public function getMainMenu()
     {
     if (!(self::$mainMenu)) {
             self::$mainMenu = Apiato::call('Theme@GetMainMenuTask');;
@@ -73,7 +63,7 @@ class Theme
     /**
      * @return array
      */
-    public static function getFooterMenu()
+    public function getFooterMenu()
     {
     if (!(self::$footerMenu)) {
             self::$footerMenu = Apiato::call('Theme@GetFooterMenuTask');;
@@ -84,7 +74,7 @@ class Theme
     /**
      * @return array
      */
-    public static function getFooterLinks()
+    public function getFooterLinks()
     {
     if (!(self::$footerLinks)) {
             self::$footerLinks = Apiato::call('Theme@GetFooterLinksTask');;

@@ -17,9 +17,7 @@ class GetFooterMenuTask extends Task
      */
     public function run()
     {
-
         return  [
-
             new Link('Link 1','#'),
             new Link('Link 2','#'),
             new Link('Link 3','#'),
@@ -28,8 +26,6 @@ class GetFooterMenuTask extends Task
             new Link('Link 6','#'),
             new Link('Link 7','#'),
             new Link('Link 8','#'),
-
         ];
     }
-
 }

@@ -19,7 +19,6 @@ class IconLink extends Link
      */
     public $icon_class;
 
-
     /**
      * IconLink constructor.
      * @param string $name

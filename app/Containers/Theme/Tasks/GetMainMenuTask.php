@@ -17,16 +17,12 @@ class GetMainMenuTask extends Task
      */
     public function run()
     {
-
         return  [
-
-            new MainMenuItem('Home',       '#', 'fe-home',    []),
-            new MainMenuItem('Interface',  '#', 'fe-box' ,    []),
-            new MainMenuItem('Components', '#', 'fe-calendar',[]),
-            new MainMenuItem('Pages',      '#', 'fe-file',    []),
-            new MainMenuItem('Forms',      '#', 'fe-square',  []),
-
+            new MainMenuItem('Home','#', 'fe-home',[]),
+            new MainMenuItem('Interface','#', 'fe-box' ,[]),
+            new MainMenuItem('Components','#', 'fe-calendar',[]),
+            new MainMenuItem('Pages','#', 'fe-file',[]),
+            new MainMenuItem('Forms','#','fe-square',[]),
         ];
     }
-
 }
