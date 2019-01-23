@@ -6,24 +6,24 @@ namespace App\Containers\Theme\Models;
  * Class MainMenuItem
  * @package App\Containers\Theme\Models
  */
-class MainMenuItem extends IconLink
+class MenuItem extends IconLink
 {
     /**
      *
      * @var array
      */
-    public $subMenu = [];
+    public $sub_menu = [];
 
     /**
      * MainMenuItem constructor.
      * @param string $name
      * @param string $link
      * @param string $icon_class
-     * @param array $subMenu
+     * @param array $sub_menu
      */
-    public function __construct(string $name, string $link, string $icon_class, array $subMenu = [])
+    public function __construct(string $name, string $link, string $icon_class, array $sub_menu = [])
     {
         parent::__construct($name, $link, $icon_class);
-        $this->subMenu = $subMenu;
+        $this->sub_menu = $sub_menu;
     }
 }

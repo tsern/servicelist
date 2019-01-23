@@ -13,72 +13,36 @@ class Theme
     /**
      * @var array
      */
-    private static $userLinks;
+    private $links;
 
     /**
-     * @var array
+     * Theme constructor.
+     * @param array $links
      */
-    private static $mainMenu;
-
-    /**
-     * @var array
-     */
-    private static $footerMenu;
-
-    /**
-     * @var array
-     */
-    private static $footerLinks;
-
-    private function __sleep()
+    public function __construct($links = [])
     {
-    }
-
-    private function __wakeup()
-    {
+        $this->links = $links;
     }
 
     /**
-     * @return array
+     * @param string $name
+     * @param $arguments
+     * @return mixed
      */
-    public function getUserLinks()
+    public function __call($name, $arguments)
     {
-    if (!(self::$userLinks)) {
-            self::$userLinks = Apiato::call('Theme@GetUserLinksTask');;
+        $prefix = 'get';
+        $suffix = 'Links';
+        $key = $name;
+
+        if (substr($key, 0, strlen($prefix)) == $prefix) {
+            $key = substr($key, strlen($prefix));
         }
-        return self::$userLinks;
-    }
 
-    /**
-     * @return array
-     */
-    public function getMainMenu()
-    {
-    if (!(self::$mainMenu)) {
-            self::$mainMenu = Apiato::call('Theme@GetMainMenuTask');;
-        }
-        return self::$mainMenu;
-    }
-
-    /**
-     * @return array
-     */
-    public function getFooterMenu()
-    {
-    if (!(self::$footerMenu)) {
-            self::$footerMenu = Apiato::call('Theme@GetFooterMenuTask');;
-        }
-        return self::$footerMenu;
-    }
-
-    /**
-     * @return array
-     */
-    public function getFooterLinks()
-    {
-    if (!(self::$footerLinks)) {
-            self::$footerLinks = Apiato::call('Theme@GetFooterLinksTask');;
-        }
-        return self::$footerLinks;
+        $key = substr($key, 0,strlen($key) - strlen($suffix));
+        $key = $result = preg_replace('/\B([A-Z])/', '_$1', $key);
+        $key = strtolower($key).'_'.strtolower($suffix);
+        
+        return $this->links[$key];
     }
 }
