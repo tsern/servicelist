@@ -5,19 +5,19 @@
         </div>
         <div class="panel-body">
             <div class="table-container">
-                <form method="POST" action="{{ url('company/update',  $company->id) }}"  role="form">
+                <form method="POST" action="{{ route('web_company_update', ['id' => $company->id]) }}"  role="form">
                     {{ csrf_field() }}
                     <input name="_method" type="hidden" value="PATCH">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                                {{--<input type="text" name="name" value="{{$company->name}}" id="name" class="form-control input-sm" placeholder="Company name">--}}
+                                <input type="text" name="name" value="{{$company->name}}" id="name" class="form-control input-sm" placeholder="Company name">
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        {{--<textarea name="text" class="form-control input-sm" placeholder="Description">{{$company->description}}</textarea>--}}
+                        <textarea name="text" class="form-control input-sm" placeholder="Description">{{$company->description}}</textarea>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">

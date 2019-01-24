@@ -19,13 +19,12 @@
                         {{--<td>{{$company->logo}}</td>--}}
                         <td><img src={{url('storage/'.$company->logo)}} height="120px" width="150px"></td>
                         <td>{{$company->location}}</td>
-                        {{--<td><a class="btn btn-primary btn-xs" href="{{action('Controller@showEditCompanyPage', $company->id)}}" >
-                        <span class="glyphicon glyphicon-pencil"></span></a></td>--}}
+                        <td><a href="{{url('company/show/'.$company->id)}}">Edit</a></td>
                         <td>
-                            {{--<form action="{{'Controller@delete', $company->id}}" method="post">--}}
+                            {{--<form method="POST" action="{{ action('Controller@delete', ['id' => $company->id]) }}">--}}
                                 {{csrf_field()}}
                                 <input name="_method" type="hidden" value="DELETE">
-                                <button class="btn btn-danger btn-xs" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
+                                <button type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>

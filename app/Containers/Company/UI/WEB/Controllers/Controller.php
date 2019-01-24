@@ -41,7 +41,8 @@ class Controller extends WebController
     {
         $company = Apiato::call('Company@FindCompanyByIdAction', [$request]);
 
-        // ..
+        return view('company::show_edit_page',
+        ['company' => $company]);
     }
 
     /**
@@ -51,7 +52,7 @@ class Controller extends WebController
      */
     public function create(CreateCompanyRequest $request)
     {
-        // ..
+        return view('company::create_company');
     }
 
     /**
@@ -63,7 +64,7 @@ class Controller extends WebController
     {
         $company = Apiato::call('Company@CreateCompanyAction', [$request]);
 
-        // ..
+        return redirect('company/index');
     }
 
     /**
@@ -85,9 +86,11 @@ class Controller extends WebController
      */
     public function update(UpdateCompanyRequest $request)
     {
+        var_dump($request);
+        die();
         $company = Apiato::call('Company@UpdateCompanyAction', [$request]);
 
-        // ..
+        return redirect('company/index');
     }
 
     /**
@@ -99,6 +102,6 @@ class Controller extends WebController
     {
          $result = Apiato::call('Company@DeleteCompanyAction', [$request]);
 
-         // ..
+        return redirect('company/index');
     }
 }
