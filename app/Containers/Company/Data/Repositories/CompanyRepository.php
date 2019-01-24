@@ -15,7 +15,8 @@ class CompanyRepository extends Repository
      */
     protected $fieldSearchable = [
         'id' => '=',
-        // ...
+        'name' => 'like',
+        'description' => 'like',
     ];
 
 }

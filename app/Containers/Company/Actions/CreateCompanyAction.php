@@ -10,12 +10,14 @@ class CreateCompanyAction extends Action
 {
     public function run(Request $request)
     {
+
         $data = $request->sanitizeInput([
-            // add your request data here
+            'name',
+            'description',
+            'logo',
         ]);
 
         $company = Apiato::call('Company@CreateCompanyTask', [$data]);
-
         return $company;
     }
 }

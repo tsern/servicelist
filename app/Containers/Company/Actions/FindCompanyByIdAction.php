@@ -6,11 +6,11 @@ use App\Ship\Parents\Actions\Action;
 use App\Ship\Parents\Requests\Request;
 use Apiato\Core\Foundation\Facades\Apiato;
 
-class UpdateCompanyAction extends Action
+class FindCompanyByIdAction extends Action
 {
     public function run(Request $request)
     {
-        $company = Apiato::call('Company@UpdateCompanyTask', [$request->id]);
+        $company = Apiato::call('Company@FindCompanyByIdTask', [$request->id]);
 
         return $company;
     }
