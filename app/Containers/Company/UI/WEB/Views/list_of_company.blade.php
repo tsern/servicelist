@@ -20,13 +20,6 @@
                         <td>{{$company->location}}</td>
                         <td><a href="{{url('company/show/'.$company->id)}}">Edit</a></td>
                         <td><a href="{{url('company/delete/'.$company->id)}}">Delete</a></td>
-                        {{--<td>--}}
-                            {{--<form method="POST" action="{{ action('Controller@delete', ['id' => $company->id]) }}">--}}
-                                {{--{{csrf_field()}}--}}
-                                {{--<input name="_method" type="hidden" value="DELETE">--}}
-                                {{--<button type="submit">Delete</button>--}}
-                            {{--</form>--}}
-                        {{--</td>--}}
                     </tr>
                 @endforeach
             @else

@@ -43,7 +43,7 @@ class DeleteCompanyRequest extends Request
      * @var  array
      */
     protected $urlParameters = [
-        // 'id',
+         'id',
     ];
 
     /**
@@ -52,8 +52,7 @@ class DeleteCompanyRequest extends Request
     public function rules()
     {
         return [
-            // 'id' => 'required',
-            // '{user-input}' => 'required|max:255',
+             'id' => 'required|exists:companies,id'
         ];
     }
 

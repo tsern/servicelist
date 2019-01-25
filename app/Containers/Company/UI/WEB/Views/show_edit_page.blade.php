@@ -5,7 +5,7 @@
         </div>
         <div>
             <div>
-                <form method="POST" action="{{ route('company/update', ['id' => $company->id]) }}"  role="form">
+                <form method="POST" action="{{ url('company/update', ['id' => $company->id]) }}"  role="form">
                     {{ csrf_field() }}
                     <input name="_method" type="hidden" value="PATCH">
                     <div>
@@ -17,7 +17,7 @@
                     </div>
 
                     <div>
-                        <textarea name="text" class="form-control input-sm" placeholder="Description">{{$company->description}}</textarea>
+                        <textarea name="description" class="form-control input-sm" placeholder="Description">{{$company->description}}</textarea>
                     </div>
                     <div>
                         <div>

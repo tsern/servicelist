@@ -2,6 +2,7 @@
 
 namespace App\Containers\Company\UI\WEB\Controllers;
 
+use App\Containers\Company\Models\Company;
 use App\Containers\Company\UI\WEB\Requests\CreateCompanyRequest;
 use App\Containers\Company\UI\WEB\Requests\DeleteCompanyRequest;
 use App\Containers\Company\UI\WEB\Requests\GetAllCompaniesRequest;
@@ -81,25 +82,25 @@ class Controller extends WebController
     }
 
     /**
-     * Update a given entity
-     *
      * @param UpdateCompanyRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateCompanyRequest $request)
     {
         $company = Apiato::call('Company@UpdateCompanyAction', [$request]);
 
-        return redirect('company/index');
+        return redirect('company/index')
+            ->with('success', 'Company updated successfully');
     }
 
     /**
-     * Delete a given entity
-     *
-     * @param DeleteCompanyRequest $request
+     * @param DeleteCompanyRequest $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function delete(DeleteCompanyRequest $request)
     {
-        $result = Apiato::call('Company@DeleteCompanyAction', [$request]);
+
+        $company = Apiato::call('Company@DeleteCompanyAction', [$request]);
 
         return redirect('company/index');
     }

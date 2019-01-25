@@ -10,7 +10,12 @@ class UpdateCompanyAction extends Action
 {
     public function run(Request $request)
     {
-        $company = Apiato::call('Company@UpdateCompanyTask', [$request->id]);
+        $data = $request->sanitizeInput([
+            'name',
+            'description',
+        ]);
+
+        $company = Apiato::call('Company@UpdateCompanyTask', [$request->id, $data]);
 
         return $company;
     }

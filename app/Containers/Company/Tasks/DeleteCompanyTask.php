@@ -3,26 +3,26 @@
 namespace App\Containers\Company\Tasks;
 
 use App\Containers\Company\Data\Repositories\CompanyRepository;
-use App\Ship\Exceptions\UpdateResourceFailedException;
+use App\Ship\Exceptions\DeleteResourceFailedException;
 use App\Ship\Parents\Tasks\Task;
 use Exception;
 
-class UpdateCompanyTask extends Task
+class DeleteCompanyTask extends Task
 {
 
     protected $repository;
 
-    public function __construct(companyRepository $repository)
+    public function __construct(CompanyRepository $repository)
     {
         $this->repository = $repository;
     }
 
-    public function run($id, array $data)
+    public function run($id)
     {
         try {
-            return $this->repository->update($data, $id);
+            return $this->repository->delete($id);
         } catch (Exception $exception) {
-            throw new UpdateResourceFailedException();
+            throw new DeleteResourceFailedException();
         }
     }
 }
