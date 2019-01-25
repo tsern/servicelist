@@ -11,13 +11,6 @@ class CreateCompanyRequest extends Request
 {
 
     /**
-     * The assigned Transporter for this Request
-     *
-     * @var string
-     */
-    // protected $transporter = \App\Ship\Transporters\DataTransporter::class;
-
-    /**
      * Define which Roles and/or Permissions has access to this request.
      *
      * @var  array

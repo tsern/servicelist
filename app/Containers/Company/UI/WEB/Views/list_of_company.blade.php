@@ -1,5 +1,5 @@
-<div class="panel-body">
-    <table class="table table-striped table-hover">
+<div>
+    <table>
         <thead>
             {{--<th><input type="checkbox" id="checkall" /></th>--}}
             <th>ID</th>
@@ -16,22 +16,22 @@
                         {{--<td><input type="checkbox" class="checkthis" /></td>--}}
                         <td>{{$company->id}}</td>
                         <td>{{$company->name}}</td>
-                        {{--<td>{{$company->logo}}</td>--}}
                         <td><img src={{url('storage/'.$company->logo)}} height="120px" width="150px"></td>
                         <td>{{$company->location}}</td>
                         <td><a href="{{url('company/show/'.$company->id)}}">Edit</a></td>
-                        <td>
+                        <td><a href="{{url('company/delete/'.$company->id)}}">Delete</a></td>
+                        {{--<td>--}}
                             {{--<form method="POST" action="{{ action('Controller@delete', ['id' => $company->id]) }}">--}}
-                                {{csrf_field()}}
-                                <input name="_method" type="hidden" value="DELETE">
-                                <button type="submit">Delete</button>
-                            </form>
-                        </td>
+                                {{--{{csrf_field()}}--}}
+                                {{--<input name="_method" type="hidden" value="DELETE">--}}
+                                {{--<button type="submit">Delete</button>--}}
+                            {{--</form>--}}
+                        {{--</td>--}}
                     </tr>
                 @endforeach
             @else
                 <tr>
-                    <td colspan="7">No Records found !!</td>
+                    <td>No Records found !!</td>
                 </tr>
                 @endif
         </tbody>

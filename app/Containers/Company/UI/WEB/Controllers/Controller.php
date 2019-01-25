@@ -11,6 +11,7 @@ use App\Containers\Company\UI\WEB\Requests\StoreCompanyRequest;
 use App\Containers\Company\UI\WEB\Requests\EditCompanyRequest;
 use App\Ship\Parents\Controllers\WebController;
 use Apiato\Core\Foundation\Facades\Apiato;
+use Illuminate\Http\Request;
 
 /**
  * Class Controller
@@ -86,8 +87,6 @@ class Controller extends WebController
      */
     public function update(UpdateCompanyRequest $request)
     {
-        var_dump($request);
-        die();
         $company = Apiato::call('Company@UpdateCompanyAction', [$request]);
 
         return redirect('company/index');
@@ -100,7 +99,7 @@ class Controller extends WebController
      */
     public function delete(DeleteCompanyRequest $request)
     {
-         $result = Apiato::call('Company@DeleteCompanyAction', [$request]);
+        $result = Apiato::call('Company@DeleteCompanyAction', [$request]);
 
         return redirect('company/index');
     }

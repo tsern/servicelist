@@ -32,9 +32,7 @@ class StoreCompanyRequest extends Request
      *
      * @var  array
      */
-    protected $decode = [
-        // 'id',
-    ];
+    protected $decode = [];
 
     /**
      * Defining the URL parameters (e.g, `/user/{id}`) allows applying
@@ -42,9 +40,7 @@ class StoreCompanyRequest extends Request
      *
      * @var  array
      */
-    protected $urlParameters = [
-        // 'id',
-    ];
+    protected $urlParameters = [];
 
     /**
      * @return  array
@@ -52,8 +48,9 @@ class StoreCompanyRequest extends Request
     public function rules()
     {
         return [
-            // 'id' => 'required',
-            // '{user-input}' => 'required|max:255',
+            'name' => 'required|max:255',
+            'description' => 'required|max:1024',
+            'logo' => 'required|max:10000|mimes:jpeg,gif,png,jpg',
         ];
     }
 
