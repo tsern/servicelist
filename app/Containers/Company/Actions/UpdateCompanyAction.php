@@ -19,7 +19,7 @@ class UpdateCompanyAction extends Action
      */
     public function run(Request $request)
     {
-        //get company
+        // get company
         $company = Apiato::call('Company@FindCompanyByIdTask', [$request->id]);
 
         // delete old logo from storage

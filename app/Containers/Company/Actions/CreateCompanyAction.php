@@ -32,7 +32,6 @@ class CreateCompanyAction extends Action
         $address = Apiato::call('Address@CreateAddressTask', [$addressData]);
 
         // create company model
-        $file = Storage::put('public/logos', $request->logo);
         $companyData = $request->sanitizeInput([
             'name',
             'description',
@@ -40,9 +39,8 @@ class CreateCompanyAction extends Action
 
         $companyData['address_id'] = $address->id;
 
-        $logo = $request->file('logo');
-        $path = $logo->store('uploads', 'public');
-        $companyData['logo']= $path;
+        $file = Storage::put('public/uploads', $request->logo);
+        $companyData['logo']= $file;
 
         $company = Apiato::call('Company@CreateCompanyTask', [$companyData]);
 

@@ -33,15 +33,6 @@ class CreateCompanyTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
-
-        // Insert some stuff
-        DB::table($this->set_schema_table)->insert(
-            array(
-                'name' => 'Google',
-                'description' => 'some text',
-                'logo' => '1',
-            )
-        );
     }
 
     /**
