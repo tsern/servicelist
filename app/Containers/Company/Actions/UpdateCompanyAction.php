@@ -14,7 +14,9 @@ class UpdateCompanyAction extends Action
             'name',
             'description',
         ]);
-
+        if ($request['logo']->isEmpty()) {
+            $data = $request->$logo;
+        }
         $company = Apiato::call('Company@UpdateCompanyTask', [$request->id, $data]);
 
         return $company;

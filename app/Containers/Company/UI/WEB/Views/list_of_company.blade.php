@@ -1,7 +1,7 @@
 <div>
+    <a href="{{url('company/create')}}">Create new Company</a>
     <table>
         <thead>
-            {{--<th><input type="checkbox" id="checkall" /></th>--}}
             <th>ID</th>
             <th>Company name</th>
             <th>Company logo</th>

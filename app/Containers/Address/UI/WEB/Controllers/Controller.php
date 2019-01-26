@@ -28,10 +28,11 @@ class Controller extends WebController
     {
         $addresses = Apiato::call('Address@GetAllAddressesAction', [$request]);
 
-        // ..
+        return view ('address::list_of_addresses',
+            ['addresses' => $addresses]);
     }
 
-    /**
+     /**
      * Show one entity
      *
      * @param FindAddressByIdRequest $request
@@ -40,7 +41,9 @@ class Controller extends WebController
     {
         $address = Apiato::call('Address@FindAddressByIdAction', [$request]);
 
-        // ..
+        return view('address::show_edit_page',
+
+            ['address' => $address]);
     }
 
     /**
@@ -50,7 +53,7 @@ class Controller extends WebController
      */
     public function create(CreateAddressRequest $request)
     {
-        // ..
+        return view('address::create_address');
     }
 
     /**
@@ -62,7 +65,7 @@ class Controller extends WebController
     {
         $address = Apiato::call('Address@CreateAddressAction', [$request]);
 
-        // ..
+        return redirect('addresses');
     }
 
     /**
@@ -74,7 +77,8 @@ class Controller extends WebController
     {
         $address = Apiato::call('Address@GetAddressByIdAction', [$request]);
 
-        // ..
+//        return view('address::show_edit_page',
+//            ['address' => $address]);
     }
 
     /**
@@ -86,7 +90,8 @@ class Controller extends WebController
     {
         $address = Apiato::call('Address@UpdateAddressAction', [$request]);
 
-        // ..
+        return redirect('addresses')
+            ->with('success', 'Address updated successfully');
     }
 
     /**
@@ -98,6 +103,6 @@ class Controller extends WebController
     {
          $result = Apiato::call('Address@DeleteAddressAction', [$request]);
 
-         // ..
+        return redirect('addresses');
     }
 }

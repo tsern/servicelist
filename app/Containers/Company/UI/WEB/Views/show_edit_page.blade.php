@@ -5,7 +5,7 @@
         </div>
         <div>
             <div>
-                <form method="POST" action="{{ url('company/update', ['id' => $company->id]) }}"  role="form">
+                <form method="POST" action="{{ url('company/update', ['id' => $company->id]) }}"  role="form" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input name="_method" type="hidden" value="PATCH">
                     <div>
@@ -19,6 +19,14 @@
                     <div>
                         <textarea name="description" class="form-control input-sm" placeholder="Description">{{$company->description}}</textarea>
                     </div>
+                    <div>
+                        <div>
+                            <div>
+                                <input type="file" name="logo" required>
+                            </div>
+                        </div>
+                    </div>
+
                     <div>
                         <div>
                             <input type="submit"  value="Update">

@@ -21,8 +21,7 @@ class CreateAddressTask extends Task
     {
         try {
             return $this->repository->create($data);
-        }
-        catch (Exception $exception) {
+        } catch (Exception $exception) {
             throw new CreateResourceFailedException();
         }
     }

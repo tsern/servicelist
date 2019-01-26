@@ -17,8 +17,8 @@ class CreateCompanyTable extends Migration
         if (Schema::hasTable($this->set_schema_table)) return;
         Schema::create($this->set_schema_table, function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 100 );
-            $table->string('description', 500 );
+            $table->string('name', 100);
+            $table->string('description', 500);
             $table->string('logo');
 
             $table->timestamps();

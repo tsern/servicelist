@@ -20,7 +20,7 @@
 <div>
     <div>
         <div>
-            <input type="file" name="logo" required>
+            <input type="file" name="logo">
         </div>
     </div>
 </div>
