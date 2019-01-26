@@ -14,7 +14,6 @@ class GetAllAddressesTask extends Task
     /**
      * @var AddressRepository
      */
-
     protected $repository;
 
     /**

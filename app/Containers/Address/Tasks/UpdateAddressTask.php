@@ -16,7 +16,6 @@ class UpdateAddressTask extends Task
     /**
      * @var AddressRepository
      */
-
     protected $repository;
 
     /**
