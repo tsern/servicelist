@@ -14,15 +14,24 @@ class CreateCompanyTable extends Migration
 
     public function up()
     {
-        if (Schema::hasTable($this->set_schema_table)) return;
+        if (Schema::hasTable ($this -> set_schema_table))
+            return;
         Schema::create($this->set_schema_table, function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 100);
             $table->string('description', 500);
             $table->string('logo');
+            $table->unsignedInteger('address_id')->default(1);
 
             $table->timestamps();
             //$table->softDeletes();
+        });
+
+        Schema::table($this->set_schema_table, function ($table) {
+            $table->foreign('address_id')
+                ->references('id')->on('companies')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
 
         // Insert some stuff

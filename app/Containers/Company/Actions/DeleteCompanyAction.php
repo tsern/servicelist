@@ -10,7 +10,6 @@ class DeleteCompanyAction extends Action
 {
     public function run(Request $request)
     {
-
         return Apiato::call('Company@DeleteCompanyTask', [$request->id]);
     }
 }

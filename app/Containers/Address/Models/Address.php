@@ -27,4 +27,9 @@ class Address extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function company()
+    {
+        return $this->belongsTo('Company', 'address_id');
+    }
 }

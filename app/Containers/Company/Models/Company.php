@@ -17,7 +17,8 @@ class Company extends Model
     protected $fillable = [
         'name',
         'description',
-        'logo'
+        'logo',
+        'address_id'
     ];
     protected $dates = [
         'created_at',
