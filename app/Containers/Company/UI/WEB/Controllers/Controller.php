@@ -48,8 +48,7 @@ class Controller extends WebController
     }
 
     /**
-     * Create entity (show UI)
-     *
+     * Create entity (show UI)     *
      * @param CreateCompanyRequest $request
      */
     public function create(CreateCompanyRequest $request)
@@ -66,7 +65,8 @@ class Controller extends WebController
     {
         $company = Apiato::call('Company@CreateCompanyAction', [$request]);
 
-        return redirect('company/index');
+        return redirect('company/index')
+            ->with('success', 'Company created successfully');
     }
 
     /**

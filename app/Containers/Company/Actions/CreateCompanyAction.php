@@ -7,8 +7,16 @@ use App\Ship\Parents\Requests\Request;
 use Apiato\Core\Foundation\Facades\Apiato;
 use Illuminate\Support\Facades\Storage;
 
+/**
+ * Class CreateCompanyAction
+ * @package App\Containers\Company\Actions
+ */
 class CreateCompanyAction extends Action
 {
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function run(Request $request)
     {
         //create address model
