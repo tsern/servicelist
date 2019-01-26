@@ -25,13 +25,15 @@ class CreateUserByCredentialsTask extends Task
     }
 
     /**
-     * @param bool $isClient
-     * @param string $email
-     * @param string $password
+     * @param bool        $isClient
+     * @param string      $email
+     * @param string      $password
      * @param string|null $name
      * @param string|null $gender
      * @param string|null $birth
-     * @return User
+     *
+     * @return  mixed
+     * @throws  CreateResourceFailedException
      */
     public function run(
         bool $isClient = true,
