@@ -33,6 +33,13 @@ class Controller extends WebController
         return view('company::list_of_company', ['companies' => $companies]);
     }
 
+    public function showCompany(GetAllCompaniesRequest $request)
+    {
+        $companies = Apiato::call('Company@GetAllCompaniesAction', [$request]);
+
+        return view('company::home_page_company', ['companies' => $companies]);
+    }
+
     /**
      * Show one entity
      * @param FindCompanyByIdRequest $request

@@ -77,12 +77,12 @@ class Controller extends WebController
         $address = Apiato::call('Address@GetAddressByIdAction', [$request]);
     }
 
-        /**
-         * Update a given entity
-         *
-         * @param UpdateAddressRequest $request
-         * @return \Illuminate\Http\RedirectResponse
-         */
+    /**
+     * Update a given entity
+     *
+     * @param UpdateAddressRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(UpdateAddressRequest $request)
     {
         $address = Apiato::call('Address@UpdateAddressAction', [$request]);
@@ -91,12 +91,12 @@ class Controller extends WebController
             ->with('success', 'Address updated successfully');
     }
 
-        /**
-         * Delete a given entity
-         *
-         * @param DeleteAddressRequest $request
-         * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-         */
+    /**
+     * Delete a given entity
+     *
+     * @param DeleteAddressRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function delete(DeleteAddressRequest $request)
     {
          $result = Apiato::call('Address@DeleteAddressAction', [$request]);
