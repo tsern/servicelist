@@ -41,7 +41,7 @@
                                             {{--<td><input type="checkbox" class="checkthis" /></td>--}}
                                             <td>{{$company->id}}</td>
                                             <td>{{$company->name}}</td>
-                                            <td><img src={{url('storage/uploads'.substr($company->logo, strlen('public/')))}} height="120px" width="150px"></td>
+                                            <td><img src={{url('storage/'.substr($company->logo, strlen('public/')))}} height="120px" width="150px"></td>
                                             <td>{{$company->location}}</td>
                                             <td><a href="{{url('company/show/'.$company->id)}}">Edit</a></td>
                                             <td><a href="{{url('company/delete/'.$company->id)}}">Delete</a></td>

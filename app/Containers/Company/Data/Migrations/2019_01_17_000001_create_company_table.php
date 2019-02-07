@@ -29,7 +29,7 @@ class CreateCompanyTable extends Migration
 
         Schema::table($this->set_schema_table, function ($table) {
             $table->foreign('address_id')
-                ->references('id')->on('companies')
+                ->references('id')->on('addresses')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
