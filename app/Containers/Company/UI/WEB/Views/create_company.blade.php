@@ -6,6 +6,9 @@
 @endif
 <div class="col-lg-8">
     <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Create new company</h3>
+        </div>
         @if (count($errors) > 0)
             <div>
                 <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -24,7 +27,6 @@
         <form method="POST" action="{{ url('company/store') }}"  role="form" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="card-body">
-                <h3 class="card-title">Create new company</h3>
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group">

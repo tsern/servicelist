@@ -3,6 +3,7 @@
 namespace App\Containers\Company\UI\WEB\Controllers;
 
 use App\Containers\Company\Models\Company;
+use App\Containers\Company\Models\Address;
 use App\Containers\Company\UI\WEB\Requests\CreateCompanyRequest;
 use App\Containers\Company\UI\WEB\Requests\DeleteCompanyRequest;
 use App\Containers\Company\UI\WEB\Requests\GetAllCompaniesRequest;
