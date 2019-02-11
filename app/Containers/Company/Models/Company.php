@@ -25,5 +25,10 @@ class Company extends Model
         'updated_at',
     ];
 
+    public function address()
+    {
+        return $this->belongsTo('App\Containers\Address\Models\Address', 'address_id');
+    }
+
 
 }

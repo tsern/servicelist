@@ -29,6 +29,8 @@ class UpdateCompanyAction extends Action
         $logo = $request->file('logo');
         $path = $logo->store('uploads', 'public');
 
+        $path = 'uploads'.$path;
+
         // get data from request
         $data = $request->sanitizeInput([
             'name',

@@ -21,35 +21,33 @@ class Controller extends WebController
 {
     /**
      * Show all entities
-     *
      * @param GetAllAddressesRequest $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(GetAllAddressesRequest $request)
     {
         $addresses = Apiato::call('Address@GetAllAddressesAction', [$request]);
 
-        return view ('address::list_of_addresses',
-            ['addresses' => $addresses]);
+        return view('address::list_of_addresses', ['addresses' => $addresses]);
     }
 
-     /**
+    /**
      * Show one entity
-     *
      * @param FindAddressByIdRequest $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show(FindAddressByIdRequest $request)
     {
         $address = Apiato::call('Address@FindAddressByIdAction', [$request]);
 
-        return view('address::show_edit_page',
-
-            ['address' => $address]);
+        return view('address::show_edit_page', ['address' => $address]);
     }
 
     /**
      * Create entity (show UI)
      *
      * @param CreateAddressRequest $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create(CreateAddressRequest $request)
     {
@@ -60,6 +58,7 @@ class Controller extends WebController
      * Add a new entity
      *
      * @param StoreAddressRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(StoreAddressRequest $request)
     {
@@ -76,15 +75,13 @@ class Controller extends WebController
     public function edit(EditAddressRequest $request)
     {
         $address = Apiato::call('Address@GetAddressByIdAction', [$request]);
-
-//        return view('address::show_edit_page',
-//            ['address' => $address]);
     }
 
     /**
      * Update a given entity
      *
      * @param UpdateAddressRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateAddressRequest $request)
     {
@@ -98,6 +95,7 @@ class Controller extends WebController
      * Delete a given entity
      *
      * @param DeleteAddressRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function delete(DeleteAddressRequest $request)
     {

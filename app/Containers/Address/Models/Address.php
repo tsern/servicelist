@@ -30,6 +30,6 @@ class Address extends Model
 
     public function company()
     {
-        return $this->belongsTo('Company', 'address_id');
+        return $this->hasOne('App\Containers\Company\Models\Company');
     }
 }

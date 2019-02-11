@@ -3,6 +3,7 @@
 namespace App\Containers\Company\UI\WEB\Controllers;
 
 use App\Containers\Company\Models\Company;
+use App\Containers\Company\Models\Address;
 use App\Containers\Company\UI\WEB\Requests\CreateCompanyRequest;
 use App\Containers\Company\UI\WEB\Requests\DeleteCompanyRequest;
 use App\Containers\Company\UI\WEB\Requests\GetAllCompaniesRequest;
@@ -23,33 +24,39 @@ class Controller extends WebController
 {
     /**
      * Show all entities
-     *
      * @param GetAllCompaniesRequest $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(GetAllCompaniesRequest $request)
     {
         $companies = Apiato::call('Company@GetAllCompaniesAction', [$request]);
 
-        return view('company::list_of_company',
-            ['companies' => $companies]);
+        return view('company::list_of_company', ['companies' => $companies]);
+    }
+
+    public function showCompany(GetAllCompaniesRequest $request)
+    {
+        $companies = Apiato::call('Company@GetAllCompaniesAction', [$request]);
+
+        return view('company::home_page_company', ['companies' => $companies]);
     }
 
     /**
      * Show one entity
-     *
      * @param FindCompanyByIdRequest $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show(FindCompanyByIdRequest $request)
     {
         $company = Apiato::call('Company@FindCompanyByIdAction', [$request]);
 
-        return view('company::show_edit_page',
-        ['company' => $company]);
+        return view('company::show_edit_page', ['company' => $company]);
     }
 
     /**
-     * Create entity (show UI)     *
+     * Create entity (show UI)
      * @param CreateCompanyRequest $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create(CreateCompanyRequest $request)
     {
@@ -58,8 +65,8 @@ class Controller extends WebController
 
     /**
      * Add a new entity
-     *
      * @param StoreCompanyRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreCompanyRequest $request)
     {
